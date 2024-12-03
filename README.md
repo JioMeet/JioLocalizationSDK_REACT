@@ -1,14 +1,14 @@
 <h1 align="center" style="border-bottom: none">
     <b>
-        <a href="https://localization-platform.sit.translate.jio">Jiotranslate for React</a><br>
+        <a href="https://localization-platform.sit.translate.jio">JioTranslate for React</a><br>
     </b>
-    The Jiotranslate i18n SDK for React
+    The JioTranslate i18n SDK for React
     <br>
 </h1>
 
-# What is Jiotranslate for React?
+# What is JioTranslate for React?
 
-React integration library of Jiotranslate. This package makes it super simple to add i18n to your React app!
+React integration library of JioTranslate. This package makes it super simple to add i18n to your React app!
 
 ## Installation
 
@@ -20,17 +20,15 @@ Then use the library in your app:
 
 ```typescript jsx
 import {
-  jiotranslateTools,
-  Jiotranslate,
-  JiotranslateProvider,
-  JiotranslateDevTools,
-  JiotranslateLanguageDetector,
-} from '@jiotranslate/react-beta';
+  JioTranslate,
+  JioTranslateProvider,
+  DevTools,
+  LanguageDetector,
+} from "@jiotranslate/react-beta";
 
-const Jiotranslate = Jiotranslate()
-  .use(JiotranslateDevTools())
-  .use(FormatIcu())
-  .use(JiotranslateLanguageDetector())
+const jt = JioTranslate()
+  .use(DevTools())
+  .use(LanguageDetector())
   .init({
     defaultLanguage: 'en',
     fallbackLanguage: 'en',
@@ -48,23 +46,23 @@ const Jiotranslate = Jiotranslate()
   });
 
 
- <JiotranslateProvider jioTranslate={Jiotranslate}>
+ <JioTranslateProvider jioTranslate={jt}>
   <Your app components>
- </JiotranslateProvider>
+ </JioTranslateProvider>
 ```
 
 ## Providing Data from backend
 
-Provide static localization data in production mode or if you want to use it without Jiotranslate platform.
+Provide static localization data in production mode or if you want to use it without JioTranslate platform.
 
 ```typescript jsx
 import {
-  BackendFetchPlugin
+  BackendFetch
 } from '@jiotranslate/react-beta';
 
-const Jiotranslate = Jiotranslate()
+const jt = JioTranslate()
    .....
-  .use(BackendFetchPlugin({
+  .use(BackendFetch({
       prefix: "api-url",
       headers: { authorization: "Auth token" }, //optional
     }))
@@ -77,12 +75,12 @@ const Jiotranslate = Jiotranslate()
   });
 
 
- <JiotranslateProvider jioTranslate={Jiotranslate}>
+ <JioTranslateProvider jioTranslate={jt}>
   <Your app components>
- </JiotranslateProvider>
+ </JioTranslateProvider>
 ```
 
-To translate texts using Jiotranslate React integration, you can use `JioTMS` component or `useTranslate` hook.
+To translate texts using JioTranslate React integration, you can use `JioTMS` component or `useTranslate` hook.
 
 ### JioTMS component
 
@@ -117,9 +115,9 @@ jioTMS("key_to_translate")
 ## Prerequisites
 
 1. An existing React project
-2. An API key obtained from [Jiotranslate Platform](https://localization-platform.sit.translate.jio).
+2. An API key obtained from [JioTranslate Platform](https://localization-platform.sit.translate.jio).
 
-## Why use Jiotranslate?
+## Why use JioTranslate?
 
 It saves you a significant amount of time on localization tasks. It also ensures your software is perfectly translated.
 
