@@ -5,10 +5,10 @@ import {
   JioTranslateProvider,
   DevTools,
   LanguageDetector,
-  BackendFetch,
 } from "@jiotranslate/react-beta";
 import "./index.css";
 import App from "./App.tsx";
+
 export const jt = JioTranslate()
   .use(DevTools())
   .use(LanguageDetector())
